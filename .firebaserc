@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "sandbox-8970b"
+  },
+  "targets": {
+    "sandbox-8970b": {
+      "hosting": {
+        "pmcstudent": [
+          "pmcstudent"
+        ]
+      }
+    }
+  }
+}

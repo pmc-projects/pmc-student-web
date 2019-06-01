@@ -38,28 +38,27 @@ const LoginForm = ({isLogin = true}) => {
             <Typography>
                 {isLogin ? "Unesite Vašu email adresu i šifru" : "Unesite željenu adresu i šifru"}
             </Typography>
-            <form className={classes.form} noValidate>
+            <form className={classes.form} noValidate autoComplete="false">
                 <TextField
+                    id="email"
+                    name="email"
                     variant="outlined"
+                    label="Email adresa"
                     margin="normal"
+                    autoComplete="false"
                     required
                     fullWidth
-                    id="email"
-                    autoComplete="false"
-                    label="Email adresa"
-                    name="email"
-                    autoFocus
                 />
                 <TextField
+                    id="password"
+                    name="password"
+                    type="password"
                     variant="outlined"
+                    label="Šifra"
                     margin="normal"
+                    autoComplete="false"
                     required
                     fullWidth
-                    name="password"
-                    label="Šifra"
-                    autoComplete="false"
-                    type="password"
-                    id="password"
                 />
                 <Button
                     type="submit"

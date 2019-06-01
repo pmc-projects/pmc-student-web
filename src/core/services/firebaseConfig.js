@@ -6,6 +6,6 @@ const config = {
     storageBucket: "sandbox-8970b.appspot.com",
     messagingSenderId: "175199507432",
     appId: "1:175199507432:web:3ab5403c9a81ad53"
-}
+};
 
 export default config;

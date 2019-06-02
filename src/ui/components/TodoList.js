@@ -48,7 +48,7 @@ const TodoListItem = ({todo, onToggle, onDelete}) => {
                     {todo.name}
                 </Typography>}
                 secondary={<Typography style={{textDecoration: todo.done ? 'line-through' : ''}}>
-                    {todo.description}
+                    <i>{todo.description}</i>
                 </Typography>}/>
             <ListItemSecondaryAction>
                 <IconButton onClick={() => onDelete(todo)}>

@@ -3,7 +3,6 @@ import Todos from "../../core/containers/todos";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import {Box} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
-import CircularProgress from "@material-ui/core/CircularProgress";
 import IconButton from "@material-ui/core/IconButton";
 import ArrowBack from '@material-ui/icons/ArrowBack';
 
@@ -25,9 +24,7 @@ const ProjectHeader = ({history}) => {
 
     if (todos.project === null) {
         return (
-            <Box style={{display: "flex", justifyContent: "center", marginTop: 100}}>
-                <CircularProgress/>
-            </Box>
+            <React.Fragment/>
         );
     }
 

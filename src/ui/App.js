@@ -13,6 +13,7 @@ import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import PrivateRoute from "./components/ProtectedRoute";
 import SplashPage from "./pages/SplashPage";
+import ProjectPage from "./pages/ProjectPage";
 
 const theme = createMuiTheme({
     palette: {
@@ -37,6 +38,7 @@ const AppRouter = () => {
     return <Router>
         <div className="App">
             <PrivateRoute exact path="/" component={HomePage}/>
+            <PrivateRoute exact path="/project/:projectId" component={ProjectPage}/>
 
             <Route path="/login" component={LoginPage}/>
         </div>

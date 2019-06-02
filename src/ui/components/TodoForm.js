@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const ProjectForm = ({onSubmit, onCancel, isLoading = false, errorMessage = null}) => {
+const TodoForm = ({onSubmit, onCancel, isLoading = false, errorMessage = null}) => {
     const classes = useStyles();
 
     const [name, setName] = useState('');
@@ -41,13 +41,13 @@ const ProjectForm = ({onSubmit, onCancel, isLoading = false, errorMessage = null
         <Card className={classes.container}>
             <CardContent className={classes.body}>
                 <Typography component="h2" variant="h5">
-                    Novi predmet
+                    Novi zadatak
                 </Typography>
                 <TextField
                     id="name"
                     name="name"
                     variant="outlined"
-                    label="Naziv predemeta"
+                    label="Zadatak"
                     margin="normal"
                     autoComplete="false"
                     required
@@ -61,7 +61,7 @@ const ProjectForm = ({onSubmit, onCancel, isLoading = false, errorMessage = null
                     id="description"
                     name="description"
                     variant="outlined"
-                    label="Opis predmeta"
+                    label="Opis zadatka"
                     margin="normal"
                     autoComplete="false"
                     required
@@ -87,4 +87,4 @@ const ProjectForm = ({onSubmit, onCancel, isLoading = false, errorMessage = null
     );
 };
 
-export default ProjectForm;
+export default TodoForm;

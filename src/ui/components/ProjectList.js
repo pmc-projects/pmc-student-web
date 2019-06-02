@@ -79,7 +79,7 @@ const ProjectList = () => {
                     : <Grid key={'new'} item xs={12}>
                         <Link onClick={() => setCreateForm(true)} style={{cursor: "pointer"}}>
                             <div className={classes.newProject}>
-                                <Typography>Dodaj novi projekat</Typography>
+                                <Typography>Dodaj novi predmet</Typography>
                             </div>
                         </Link>
                     </Grid>

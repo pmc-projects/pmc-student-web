@@ -20,6 +20,11 @@ const theme = createMuiTheme({
             main: deepPurple[500],
         },
     },
+    typography: {
+        h5: {
+            fontWeight: 800,
+        }
+    }
 });
 
 const AppRouter = () => {

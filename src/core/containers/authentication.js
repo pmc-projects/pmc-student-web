@@ -3,10 +3,10 @@ import {createContainer} from "unstated-next";
 
 import Firebase from "../services/firebase";
 
-function useAuthentication(initialUser = null) {
+function useAuthentication() {
     const [initialized, setInitialized] = useState(false);
     const [loading, setLoading] = useState(true);
-    const [user, setUser] = useState(initialUser);
+    const [user, setUser] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
 
     const signIn = (email, password) => {

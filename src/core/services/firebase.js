@@ -8,3 +8,5 @@ import firebaseConfig from "./firebaseConfig";
 const app = firebase.initializeApp(firebaseConfig);
 
 export default app;
+
+export const Timestamp = firebase.firestore.Timestamp;

@@ -30,7 +30,7 @@ const HomePage = () => {
 
     return <Container maxWidth="md" className={classes.container}>
         <Box className={classes.header}>
-            <Typography component="h1" variant="h5">
+            <Typography id="title" component="h1" variant="h5">
                 PMC Student
             </Typography>
 

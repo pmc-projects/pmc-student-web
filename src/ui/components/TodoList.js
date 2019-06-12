@@ -36,6 +36,7 @@ const TodoListItem = ({todo, onToggle, onDelete}) => {
         <ListItem button onClick={() => onToggle(todo)}>
             <ListItemIcon>
                 <Checkbox
+                    data-role="check" data-name={todo.name}
                     edge="start"
                     tabIndex={-1}
                     color='primary'
@@ -44,14 +45,15 @@ const TodoListItem = ({todo, onToggle, onDelete}) => {
                 />
             </ListItemIcon>
             <ListItemText
-                primary={<Typography style={{textDecoration: todo.done ? 'line-through' : ''}}>
+                primary={<Typography data-role="title" data-name={todo.name}
+                                     style={{textDecoration: todo.done ? 'line-through' : ''}}>
                     {todo.name}
                 </Typography>}
                 secondary={<Typography style={{textDecoration: todo.done ? 'line-through' : ''}}>
                     <i>{todo.description}</i>
                 </Typography>}/>
             <ListItemSecondaryAction>
-                <IconButton onClick={() => onDelete(todo)}>
+                <IconButton data-name={todo.name} data-role="delete" onClick={() => onDelete(todo)}>
                     <DeleteIcon style={{color: "black"}}/>
                 </IconButton>
             </ListItemSecondaryAction>
@@ -68,7 +70,7 @@ const TodoList = () => {
 
     if (todos.todos === null) {
         return (
-            <Box style={{display: "flex", justifycontent: "center", margintop: 100}}>
+            <Box style={{display: "flex", justifyContent: "center", marginTop: 300}}>
                 <CircularProgress/>
             </Box>
         );
@@ -79,7 +81,7 @@ const TodoList = () => {
             <Typography component="h1" variant="h5" style={{padding: 15}}>
                 Zadaci
             </Typography>
-            <List>
+            <List id="todo-list">
                 {todos.todos.map((todo) => {
                     return (
                         <TodoListItem
@@ -102,7 +104,7 @@ const TodoList = () => {
                                 onCancel={() => setCreateForm(false)}/>
                         </Grid>
                         : <Grid key={'new'} item xs={12}>
-                            <Link onClick={() => setCreateForm(true)} style={{cursor: "pointer"}}>
+                            <Link id="create-todo" onClick={() => setCreateForm(true)} style={{cursor: "pointer"}}>
                                 <div className={classes.newTodo}>
                                     <Typography>Dodaj novi zadatak</Typography>
                                 </div>

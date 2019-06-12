@@ -35,5 +35,8 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "chromedriver": "^75.0.0",
+    "nightwatch": "^1.1.12"
+  }
 }

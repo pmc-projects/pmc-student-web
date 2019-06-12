@@ -76,7 +76,7 @@ const TodoForm = ({onSubmit, onCancel, isLoading = false, errorMessage = null}) 
             </CardContent>
             <CardActions className={classes.actions}>
                 <Link className={classes.actionCancel} onClick={onCancel}>Cancel</Link>
-                <Button variant="contained" color="primary" size="large" onClick={() => onSubmit(name, description)}>
+                <Button id="submit-todo" variant="contained" color="primary" size="large" onClick={() => onSubmit(name, description)}>
                     {!isLoading
                         ? <Typography>Napravi</Typography>
                         : <CircularProgress size={20} style={{color: 'white'}}/>

@@ -40,7 +40,7 @@ const ProjectHeader = ({history}) => {
                 </Box>
                 <Box style={{flexGrow: 1}}>
                     <Box className={classes.header}>
-                        <Typography component="h1" variant="h5">
+                        <Typography component="h1" variant="h5" data-name={todos.project.name}>
                             {todos.project.name}
                         </Typography>
                     </Box>

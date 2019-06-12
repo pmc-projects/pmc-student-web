@@ -39,19 +39,22 @@ const ProjectList = () => {
     if (projects.projects === null) {
         return (
             <Box style={{display: "flex", justifyContent: "center", marginTop: 100}}>
-                <CircularProgress/>
+                <CircularProgress id="project-list-spinner"/>
             </Box>
         );
     }
 
     return (
-        <Grid container spacing={1}>
+        <Grid id="project-list" container spacing={1}>
             {projects.projects.map((project) => {
                 return (
                     <Grid key={project.id} item xs={12}>
                         <Card className={classes.item}>
-                            <CardHeader title={<NavLink to={`/project/${project.id}`}>{project.name}</NavLink>}
+                            <CardHeader title={<NavLink data-name={project.name}
+                                                        to={`/project/${project.id}`}>{project.name}</NavLink>}
                                         action={<DeleteIcon
+                                            data-role="delete"
+                                            data-name={project.name}
                                             className={classes.delete}
                                             onClick={(e) => {
                                                 projects.deleteProject(project.id);
@@ -77,7 +80,7 @@ const ProjectList = () => {
                             onCancel={() => setCreateForm(false)}/>
                     </Grid>
                     : <Grid key={'new'} item xs={12}>
-                        <Link onClick={() => setCreateForm(true)} style={{cursor: "pointer"}}>
+                        <Link id="create-project" onClick={() => setCreateForm(true)} style={{cursor: "pointer"}}>
                             <div className={classes.newProject}>
                                 <Typography>Dodaj novi predmet</Typography>
                             </div>

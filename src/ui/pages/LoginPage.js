@@ -105,6 +105,7 @@ const LoginPage = () => {
                     {authentication.errorMessage}
                 </Typography>}
                 <Button
+                    id="action"
                     fullWidth
                     variant="contained"
                     color="primary"
@@ -121,7 +122,7 @@ const LoginPage = () => {
                     {!authentication.loading && (isLogin ? "Prijavite se" : "Registrujte se")}
                 </Button>
                 <Box className={classes.centered}>
-                    <Link to={isLogin ? "/register" : "/login"} variant="body2" onClick={() => setIsLogin(!isLogin)}>
+                    <Link id="alt-action" to={isLogin ? "/register" : "/login"} variant="body2" onClick={() => setIsLogin(!isLogin)}>
                         {isLogin ? "Nemate nalog? Registrujte se." : "Imate nalog? Ulogujte se."}
                     </Link>
                 </Box>

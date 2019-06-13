@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
 
 const TodoListItem = ({todo, onToggle, onDelete}) => {
     return (
-        <ListItem button onClick={() => onToggle(todo)}>
+        <ListItem data-testid={"todo-item"} button onClick={() => onToggle(todo)}>
             <ListItemIcon>
                 <Checkbox
                     data-role="check" data-name={todo.name}
@@ -53,7 +53,7 @@ const TodoListItem = ({todo, onToggle, onDelete}) => {
                     <i>{todo.description}</i>
                 </Typography>}/>
             <ListItemSecondaryAction>
-                <IconButton data-name={todo.name} data-role="delete" onClick={() => onDelete(todo)}>
+                <IconButton data-testid="delete-todo" data-name={todo.name} data-role="delete" onClick={() => onDelete(todo)}>
                     <DeleteIcon style={{color: "black"}}/>
                 </IconButton>
             </ListItemSecondaryAction>
@@ -71,7 +71,7 @@ const TodoList = () => {
     if (todos.todos === null) {
         return (
             <Box style={{display: "flex", justifyContent: "center", marginTop: 300}}>
-                <CircularProgress/>
+                <CircularProgress data-testid="todo-list-loader"/>
             </Box>
         );
     }

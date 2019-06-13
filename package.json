@@ -6,9 +6,11 @@
     "@material-ui/core": "^4.0.1",
     "@material-ui/icons": "^4.0.1",
     "@material-ui/styles": "^4.0.1",
+    "@testing-library/react": "^8.0.1",
     "firebase": "^6.1.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "jest-dom": "^3.5.0",
+    "react": "16.9.0-alpha.0",
+    "react-dom": "16.9.0-alpha.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
     "typeface-roboto": "^0.0.54",
@@ -37,6 +39,8 @@
   },
   "devDependencies": {
     "chromedriver": "^75.0.0",
-    "nightwatch": "^1.1.12"
+    "history": "latest",
+    "nightwatch": "^1.1.12",
+    "react-testing-library": "^8.0.1"
   }
 }

@@ -32,7 +32,7 @@ const ProjectHeader = ({history}) => {
         <React.Fragment>
             <Box style={{display: "flex", alignItems: "center"}}>
                 <Box>
-                    <IconButton onClick={() => {
+                    <IconButton data-testid="back-btn" onClick={() => {
                         history.goBack()
                     }}>
                         <ArrowBack style={{color: "black"}}/>

@@ -39,7 +39,7 @@ const ProjectList = () => {
     if (projects.projects === null) {
         return (
             <Box style={{display: "flex", justifyContent: "center", marginTop: 100}}>
-                <CircularProgress id="project-list-spinner"/>
+                <CircularProgress id="project-list-spinner" data-testid="project-list-spinner"/>
             </Box>
         );
     }
@@ -48,13 +48,14 @@ const ProjectList = () => {
         <Grid id="project-list" container spacing={1}>
             {projects.projects.map((project) => {
                 return (
-                    <Grid key={project.id} item xs={12}>
+                    <Grid data-testid="project-item" key={project.id} item xs={12}>
                         <Card className={classes.item}>
                             <CardHeader title={<NavLink data-name={project.name}
                                                         to={`/project/${project.id}`}>{project.name}</NavLink>}
                                         action={<DeleteIcon
                                             data-role="delete"
                                             data-name={project.name}
+                                            data-testid="delete-project"
                                             className={classes.delete}
                                             onClick={(e) => {
                                                 projects.deleteProject(project.id);

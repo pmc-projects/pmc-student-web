@@ -56,6 +56,10 @@ const ProjectForm = ({onSubmit, onCancel, isLoading = false, errorMessage = null
                     disabled={isLoading}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+
+                    inputProps={{
+                        "data-testid": "name"
+                    }}
                 />
                 <TextField
                     id="description"
@@ -71,12 +75,17 @@ const ProjectForm = ({onSubmit, onCancel, isLoading = false, errorMessage = null
                     disabled={isLoading}
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
+
+                    inputProps={{
+                        "data-testid": "description"
+                    }}
                 />
                 {errorMessage && <Typography color='error'>{errorMessage}</Typography>}
             </CardContent>
             <CardActions className={classes.actions}>
                 <Link className={classes.actionCancel} onClick={onCancel}>Cancel</Link>
-                <Button id="submit-project" variant="contained" color="primary" size="large" onClick={() => onSubmit(name, description)}>
+                <Button id="submit-project" variant="contained" color="primary" size="large"
+                        onClick={() => onSubmit(name, description)}>
                     {!isLoading
                         ? <Typography>Napravi</Typography>
                         : <CircularProgress size={20} style={{color: 'white'}}/>

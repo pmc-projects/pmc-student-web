@@ -56,6 +56,10 @@ const TodoForm = ({onSubmit, onCancel, isLoading = false, errorMessage = null}) 
                     disabled={isLoading}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+
+                    inputProps={{
+                        "data-testid": "name"
+                    }}
                 />
                 <TextField
                     id="description"
@@ -71,6 +75,10 @@ const TodoForm = ({onSubmit, onCancel, isLoading = false, errorMessage = null}) 
                     disabled={isLoading}
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
+
+                    inputProps={{
+                        "data-testid": "description"
+                    }}
                 />
                 {errorMessage && <Typography color='error'>{errorMessage}</Typography>}
             </CardContent>
